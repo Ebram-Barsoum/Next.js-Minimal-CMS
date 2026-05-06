@@ -1,26 +1,96 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+button {
+    cursor: pointer;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.quill {
+    display: grid;
+    grid-template-rows: auto 1fr;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.quill .ql-editor {
+    position: relative;
+    padding: 2rem !important;
+    height: 350px;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.ql-editor.ql-blank::before {
+    -webkit-padding-start: 1rem;
+    padding-inline-start: 1rem;
+}
+
+div[role="toolbar"] {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+.ql-editor * {
+    font-size: 1rem;
+}
+
+.ql-editor h1,
+.ql-editor h2,
+.ql-editor h3,
+.ql-editor h4,
+.ql-editor h5,
+.ql-editor h6 {
+    margin: .8rem 0 !important;
+}
+
+.ql-editor ol:not(:has(li > span)) li {
+    list-style: decimal !important;
+    padding-left: .8rem !important;
+}
+
+.ql-editor ul:not(:has(li > span)) li {
+    list-style: inside !important;
+    padding-left: .8rem !important;
+}
+
+.ql-editor li:has(span) {
+    padding-left: 0 !important;
+}
+
+.ql-editor li:not(:has(span)) .ql-ui::before,
+.ql-editor li:not(:has(span)) .ql-ui::marker {
+    content: '' !important;
+    display: none !important;
+}
+
+.ql-editor blockquote {
+    font-style: italic;
+    color: gray;
+}
+
+.ql-code-block-container {
+    ::picker(select) {
+        color: black;
+    }
+}
+
+pre,
+.ql-code-block-container {
+    padding: 1rem !important;
+    max-width: 100% !important;
+    overflow: auto !important;
+    border-radius: .8rem !important;
+    -webkit-border-radius: .8rem !important;
+    -moz-border-radius: .8rem !important;
+    -ms-border-radius: .8rem !important;
+    -o-border-radius: .8rem !important;
+}
+
+::-webkit-scrollbar {
+    width: 10px !important;
+    height: 5px !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #999 !important;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
