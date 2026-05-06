@@ -105,7 +105,7 @@ All posts are stored under a single localStorage key `"posts"` as a JSON array.
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/Next.js-Minimal-CMS.git
+git clone https://github.com/Ebram-Barsoum/Next.js-Minimal-CMS.git
 cd Next.js-Minimal-CMS
 ```
 
